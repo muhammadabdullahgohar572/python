@@ -4,33 +4,37 @@
 # if day=="Wednesday":
 #     price -= 2
 # print (f"Your Ticket Has been book and ${price}")
+# Number = 655
+# Grade = ""
+# if Number >=101:
+#     print("Please cheak your number error is Number Wrong upload")
+#     exit()
+# if Number >= 90:
+#     Grade = "A++"
+# elif Number >= 80:
+#     Grade = "A+"
+# elif Number >= 70:
+#     Grade = "A"
+# elif Number >= 60:
+#     Grade = "B"
+# elif Number >= 50:
+#     Grade = "C"
+# elif Number >= 40:
+#     Grade = "D"
+# else:
+#     Grade = "F"
+# if Grade == "F":
+#     print("Sorry to Saye but your Fail")
+# else:
+#     print(f" Your Are Passed And your Grade is{Grade}")
 
 
-Number = 655
-Grade = ""
+# numbers = [10, -5, 25, -12, 8, -30, 15, -7, 40, -20]
+
+# Positive = 0
 
 
-if Number >=101:
-    print("Please cheak your number error is Number Wrong upload")
-    exit()
-
-if Number >= 90:
-    Grade = "A++"
-elif Number >= 80:
-    Grade = "A+"
-elif Number >= 70:
-    Grade = "A"
-elif Number >= 60:
-    Grade = "B"
-elif Number >= 50:
-    Grade = "C"
-elif Number >= 40:
-    Grade = "D"
-else:
-    Grade = "F"
-
-
-if Grade == "F":
-    print("Sorry to Saye but your Fail")
-else:
-    print(f" Your Are Passed And your Grade is{Grade}")
+# for num in numbers:
+#     if num > 0:
+#         Positive += 1
+#         print(f"Total positive numbers: {Positive}")

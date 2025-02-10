@@ -37,4 +37,41 @@
 # for num in numbers:
 #     if num > 0:
 #         Positive += 1
+
 #         print(f"Total positive numbers: {Positive}")
+
+
+# number=3
+
+# for i in range(1,11):
+#     if i==5:
+#      continue
+
+#     print(3,'x',i,"=",i*number)
+
+# My_Alphabat="Abdullah";
+# MyResiveAlphabat="";
+
+# for letter in My_Alphabat:
+#     MyResiveAlphabat =letter+MyResiveAlphabat;
+
+#     print(MyResiveAlphabat)
+
+
+# MyString="EngieerAbdullah"
+
+# for Count in MyString:
+#   if MyString.count(Count)==1:
+#     print("Stop This Char",Count)
+#     break
+
+
+myNumber = 5
+Factorial = 1
+
+while myNumber > 0:
+
+    Factorial *= myNumber
+
+    print(Factorial)
+    myNumber -= 1

@@ -1,0 +1,3 @@
+git add .              # Sabhi files ko staging area me add karein
+git commit -m "test"   # Commit karein message ke sath
+git push origin main   # Remote repository me changes bhejein

@@ -16,10 +16,9 @@
   
   
 def fac(n):
-    return n*fac(n-1)
-  
-  
-print(fac(2))
-  
-  
-  
+    if n == 0 or n == 1:  # Base case to stop recursion
+        return 1
+    return n * fac(n - 1)
+
+print(fac(2))  # Output: 2
+print(fac(5))  # Output: 120

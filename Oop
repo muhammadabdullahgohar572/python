@@ -1,0 +1,26 @@
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def fullname(self):
+        return f"{self.brand} {self.model}"
+
+
+# car1 = Car("Toyota", "Camry")
+# print(car1.brand, car1.model)
+
+# print(car1.fullname()) 
+
+
+class On_more_add(Car):
+    def __init__(self,band,model,color):
+        super().__init__(band, model)
+        self.color = color
+        
+
+add_more_car = On_more_add("Tesla", "Model S", "Red")        
+print(add_more_car.brand, add_more_car.model, add_more_car.color)       
+print(add_more_car.fullname())
+
+ 

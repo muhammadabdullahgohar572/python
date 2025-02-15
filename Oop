@@ -1,35 +1,52 @@
 class Car:
+
+    Total_Account = 0
+
     def __init__(self, __brand, model):
         self.__brand = __brand
         self.model = model
+        Car.Total_Account += 1
 
     def fullname(self):
         return f"{self.__brand} {self.model}"
-    
+
     def get_brnd(self):
         return self.__brand
-    
+
     def Fuel(self):
-        return ("This Fuel is a car")
+        return "This Fuel is a car"
+
+    @staticmethod
+    def static():
+        return "This is a static method"
 
 
 class On_more_add(Car):
-    def __init__(self,__band,model,color):
+    def __init__(self, __band, model, color):
         super().__init__(__band, model)
         self.color = color
-        
+
     def Electric(self):
-        return ("This Electric is a car")
-        
-
-add_more_car = On_more_add("Tesla", "Model S", "Red")        
-print(add_more_car.Electric())
-
-print("----------------------------------------")
+        return "This Electric is a car"
 
 
-carfun = Car("Tesla", "Model S")        
-print(carfun.Fuel())       
+# add_more_car = On_more_add("Tesla", "Model S", "Red")
+# print(add_more_car.Electric())
+
+# print("----------------------------------------")
 
 
- 
+# carfun = Car("Tesla", "Model S")
+# print(carfun.Fuel())
+
+
+# carfun1 = Car("Tesla", "Model S")
+# print(carfun1.Fuel())
+
+
+# print("----------------------------------------")
+# print(Car.Total_Account)
+
+
+# carfun = Car("Tesla", "Model S")
+# print(carfun.static())

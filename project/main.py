@@ -3,7 +3,7 @@ import json
 
 def load_data():
     try:
-        with open("youtube.json", "r") as file:
+        with open("youtube.txt", "r") as file:
             data = json.load(file)
             return data
     except FileNotFoundError:
@@ -12,14 +12,17 @@ def load_data():
 
 
 def save_Data_here(videos):
-    with open("youtube.json", "w") as file:
+    with open("youtube.txt", "w") as file:
         json.dump(videos, file)
 
 
 def list_youtube_videos(videos):
-
-    for index, video in enumerate(videos, start=1):
-        print(f"{index}")
+         print("\n")
+         print("*" * 50)
+         for index, video in enumerate(videos, start=1):
+           print(f"{index} - {video['name']} - Duration is  {video['time']}")
+         print("\n")
+         print("*" * 50)
 
 
 def Add_a_youtube_video(videos):
@@ -30,11 +33,24 @@ def Add_a_youtube_video(videos):
 
 
 def Update_a_youtube_video_Details(videos):
-    pass
-
+    list_youtube_videos(videos)
+    index=int(input("Enter The video number you want to update: "))
+    if 1<=index <=len(videos):
+        name = input("Enter the name of the video: ")
+        time = input("Enter the time of the video: ")
+        videos[index-1]={"name":name,"time":time}
+        save_Data_here(videos)
+    else:
+        print("Invalid video number")
 
 def Delete_a_youtube_video(videos):
-    pass
+   list_youtube_videos(videos)
+   index=int(input("Enter The video number you want to delete: "))
+   if 1<=index<=len(videos):
+         del videos[index-1]
+         save_Data_here(videos)
+   else:
+    print("Invalid video number")
 
 
 def main():
@@ -47,7 +63,7 @@ def main():
         print("4. Delete a youtube video")
         print("5. Exit")
         choice = input("Enter your choice: ")
-        print(videos)
+      
 
         match choice:
             case "1":

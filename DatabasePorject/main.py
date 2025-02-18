@@ -1,36 +1,39 @@
 import sqlite3
 
 conn = sqlite3.connect("youTube_Videos.db")
-
-
 cursor = conn.cursor()
-
-
 cursor.execute(
     """ 
                CREATE TABLE IF NOT EXISTS videos(
                    id INTEGER PRIMARY KEY ,
                    name TEXT NOT NULL,
-                   time TEXT NOT NULL,
+                   time TEXT NOT NULL
                )
                """
 )
 
 
-def Add_video():
-    pass
-
-
 def List_video():
-    pass
+    coursor = cursor.execute("SELECT * FROM videos")
+    for row in coursor.fetchall():
+        print(row)
 
 
-def Delete_video():
-    pass
+def Add_video(name, time):
+    cursor.execute("INSERT INTO videos  (name,time) VALUES( ?,?)", (name, time,))
+    conn.commit()
 
 
-def Update_video():
-    pass
+def Update_video(video_id, new_name, new_time):
+    cursor.execute(
+        "UPDATE videos SET name=? , time=? WHERE id = ?", (video_id,new_name, new_time)
+    )
+    conn.commit()
+
+
+def Delete_video(video_id):
+    cursor.execute("DELETE FROM videos WHERE id = ?", (video_id,))
+    conn.commit()
 
 
 def main():
@@ -63,6 +66,8 @@ def main():
         else:
             print("Invalid choice!")
 
-conn.close()
+
 if __name__ == "__main__":
     main()
+
+conn.close()
